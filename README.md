@@ -1,5 +1,5 @@
 # pegasus
-Backed for Hawk
+Backend for Hawk (Golang)
 
 PEGASUS – THE WINGED HORSE
 Genitive: Pegasi
