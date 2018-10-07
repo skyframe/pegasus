@@ -19,7 +19,17 @@ func (a *Authenticator) Authenticate(request security.AuthenticateRequest) (*sec
 		return nil, exceptions.Unauthorized{}
 	}
 
+	admin := security.Role{
+		Name: "admin",
+		Permissions: []security.Permission{
+			{Name: "Click"},
+		},
+	}
+
 	return &security.AuthenticateResponse{
-		Claims: security.LoginClaims{},
+		LoginClaims: security.LoginClaims{
+			Username: c.Username,
+			Roles:    []security.Role{admin},
+		},
 	}, nil
 }

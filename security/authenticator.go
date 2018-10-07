@@ -5,14 +5,14 @@ type AuthenticateRequest struct {
 }
 
 type AuthenticateResponse struct {
-	Claims Claims
+	LoginClaims LoginClaims
 }
 
 type Authenticator interface {
 	Authenticate(AuthenticateRequest) (*AuthenticateResponse, error)
 }
 
-type Claims interface{}
-
 type LoginClaims struct {
+	Username string
+	Roles []Role
 }
